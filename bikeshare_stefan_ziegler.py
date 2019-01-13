@@ -18,7 +18,7 @@ no_filter = ('all')
 answers_yn= ('yes', 'no')                
 
 # introduce error messages that can be used randomly to make the script appear more engaging
-input_error_1 = "Sorry, I do not recognize this input. Did you mistype by any chance?\nPlease try again!\n"
+input_error_1 = "Sorry, I do not recognize your input. Did you mistype by any chance?\nPlease try again!\n"
 input_error_2 = "Sorry, I don\'t understand what you\'re saying. Did you misspell it by any chance?\nPlease try again!\n"
 input_error_3 = "Sorry, I\'m not reading you right. Am I looking at a typo by any chance?\nPlease try again!\n"
 
@@ -38,7 +38,7 @@ def get_filters():
     
     # get user input for city, handle errors
     while True:
-      print("Which city would you like to explore? \nWe have data for Chicago, New York City and Washington.\n")
+      print("Which city would you like to explore? \nWe have data in store for Chicago, New York City and Washington.\n")
       city = input("Type the city to choose: ").lower()
       if city not in cities:
         print(input_errors[rd.randint(0, 2)])
@@ -48,10 +48,10 @@ def get_filters():
 
     # get user input for month, handle errors
     while True:
-      print("Now let's move on to choosing a month! \nPlease choose a month by typing January, February, March,... or type \"all\" to apply no filter\n")
+      print("Let's move on to choosing a month! \nPlease choose a month by typing January, February, March,... or type \"all\" to apply no filter\n")
       month = input("Type the month to choose: ").lower()
       if month == no_filter:
-        print("Ok! I\'ll not filter by month!")
+        print("Ok! I\'ll not apply a filter by month!")
         break  
       elif month in months:
         print("Thanks! I'll filter results for month \"{}\"!".format(month))
@@ -61,10 +61,10 @@ def get_filters():
   
     # get user input for day of week, handle errors
     while True:
-      print("Finally let's move on to choosing a day!\nYou can choose a day by typing Monday, Tuesday, Wednesday,... or type \"all\" to apply no filter\n")
+      print("Let's move on to choosing a day!\nYou can choose a day by typing Monday, Tuesday, Wednesday,... or type \"all\" to apply no filter\n")
       day = input("Type the day to choose: ").lower()
       if day == no_filter:
-        print("Ok! I\'ll not filter by day!")
+        print("Ok! I\'ll not apply a filter by day!")
         break  
       elif day in days:
         print("Thanks! I'll filter results for day \"{}\"!".format(day))
@@ -183,7 +183,7 @@ def trip_duration_stats(df):
 
 
 def user_stats(df):
-    """Displays statistics on bikeshare users."""
+    """Displays statistics on bikeshare users"""
 
     print('\nI\'m happy to calculate User Stats for you...\n')
     start_time = time.time()
@@ -192,22 +192,24 @@ def user_stats(df):
     user_type_counts = df['User Type'].value_counts()
     print("These User Types occur in the data:\n{}".format(user_type_counts))
 
-    # Display counts of gender; introduce a check if this data point exists in the data first
+    # Display counts of gender; 
+    # Introduce a check if this data point exists in the data first
     if 'Gender' in df: 
       gender_counts = df['Gender'].value_counts()
-      print("\nThese Genders occur in the data:\n{}".format(gender_counts))
+      print("\nThese genders occur in the data:\n{}".format(gender_counts))
     else:
-      print("\nSorry there are no data points for me to provide information on Gender.")
+      print("\nSorry there are no data points for me to provide information on gender.")
     
 
-    # Display earliest, most recent, and most common year of birth; introduce a check if this data point exists in the data first
+    # Display earliest, most recent, and most common year of birth; 
+    # introduce a check if this data point exists in the data first
     if 'Birth Year' in df:
       earl_dob = int(df['Birth Year'].min())
       mrec_dob = int(df['Birth Year'].max())
       mode_dob = int(df['Birth Year'].mode())
-      print("\nThe oldest User was born in:   {}\nThe youngest User was born in: {}\nMost users are born in:        {}".format(earl_dob, mrec_dob, mode_dob))
+      print("\nThe oldest user was born in:   {}\nThe youngest user was born in: {}\nMost users are born in:        {}".format(earl_dob, mrec_dob, mode_dob))
     else:
-      print("Sorry there are no data points for me to provide information on Birth Years\n")
+      print("Sorry there are no data points for me to provide information on birth years\n")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*80)
@@ -222,7 +224,7 @@ def raw_data(df):
   # go from 0 to the number of rows in steps of 5 to print 5 data sets
     for i in range(0, row_length, 5):
 
-      user_input = input("\nI'm happy to show you some sets of raw data I used to calculate these statistics.\nWould you like to see some? Let me know by typing \"yes\" or \"no\":\n\n>>>").lower()
+      user_input = input("\nI'm happy to show you some sets of raw data used to calculate these statistics.\nWould you like to see them? Let me know by typing \"yes\" or \"no\":\n\n>>>").lower()
       if user_input not in answers_yn:
         print(input_errors[rd.randint(0, 2)])
       if user_input == 'no':
