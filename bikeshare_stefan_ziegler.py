@@ -17,7 +17,7 @@ days = ('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sun
 no_filter = ('all')
 answers_yn= ('yes', 'no')                
 
-input_error_1 = "Sorry, I do not recognize this input. Did you mistype by any chance?\nPlease try again!\n"
+input_error_1 = "Sorry, I do not recognize your input. Did you mistype by any chance?\nPlease try again!\n"
 input_error_2 = "Sorry, I don\'t understand what you\'re saying. Did you misspell it by any chance?\nPlease try again!\n"
 input_error_3 = "Sorry, I\'m not reading you right. Am I looking at a typo by any chance?\nPlease try again!\n"
 
@@ -182,7 +182,7 @@ def trip_duration_stats(df):
 
 
 def user_stats(df):
-    """Displays statistics on bikeshare users."""
+    """Displays statistics on bikeshare users"""
 
     print('\nI\'m happy to calculate User Stats for you...\n')
     start_time = time.time()
@@ -191,7 +191,8 @@ def user_stats(df):
     user_type_counts = df['User Type'].value_counts()
     print("These User Types occur in the data:\n{}".format(user_type_counts))
 
-    # Display counts of gender; introduce a check if this data point exists in the data first
+    # Display counts of gender; 
+    # Introduce a check if this data point exists in the data first
     if 'Gender' in df: 
       gender_counts = df['Gender'].value_counts()
       print("\nThese Genders occur in the data:\n{}".format(gender_counts))
@@ -199,7 +200,8 @@ def user_stats(df):
       print("\nSorry there are no data points for me to provide information on Gender.")
     
 
-    # Display earliest, most recent, and most common year of birth; introduce a check if this data point exists in the data first
+    # Display earliest, most recent, and most common year of birth; 
+    # introduce a check if this data point exists in the data first
     if 'Birth Year' in df:
       earl_dob = int(df['Birth Year'].min())
       mrec_dob = int(df['Birth Year'].max())
