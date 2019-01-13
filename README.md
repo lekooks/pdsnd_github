@@ -1,5 +1,6 @@
 ### Date created
-This project and Readme File were created Sunday 13.01.2019.
+This github hosting project and Readme File were created Sunday 13.01.2019.
+The original Bikeshare project hosted with this was comitted 15.12.2018
 
 ### Project Title
 bikeshare_stefan_ziegler
