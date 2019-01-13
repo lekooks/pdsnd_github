@@ -5,7 +5,7 @@ import numpy as np
 import random as rd
 import json as js
 
-#introduce dictionaries and output_messages to handle and verify user input strings
+# introduce dictionaries to handle and verify user input strings
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
@@ -17,6 +17,7 @@ days = ('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sun
 no_filter = ('all')
 answers_yn= ('yes', 'no')                
 
+# introduce error messages that can be used randomly to make the script appear more engaging
 input_error_1 = "Sorry, I do not recognize this input. Did you mistype by any chance?\nPlease try again!\n"
 input_error_2 = "Sorry, I don\'t understand what you\'re saying. Did you misspell it by any chance?\nPlease try again!\n"
 input_error_3 = "Sorry, I\'m not reading you right. Am I looking at a typo by any chance?\nPlease try again!\n"
