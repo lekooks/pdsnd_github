@@ -1,0 +1,4 @@
+# ignore date files from bikeshare püroject
+*.csv
+# ignore the bikeshare_readme.txt file
+bikeshare_readme.txt
